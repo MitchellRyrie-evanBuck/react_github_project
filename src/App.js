@@ -50,6 +50,8 @@ class App extends Component {
           //   return <Text></Text>;
           // }}
         />
+
+        
         <Redirect to="/"></Redirect>
       </Switch>
     );
