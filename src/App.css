@@ -101,15 +101,154 @@
   margin: 40px auto;
   padding: 50px;
 }
+.updata_issues_title{
+  width: 800px;
+  height: 100px;
+  /* background-color: aquamarine; */
+}
+.updata_issues_content{
+  width: 800px;
+  height: 400px;
+  /* background-color: rgb(118, 185, 163); */
+}
+
+.updata_issues_title_input {
+  height: 50px;
+  width: 300px;
+  background-color: var(--back-color);
+  border-radius: 10px;
+  border: 3px solid #f3f4f7;
+  box-shadow: 2px 2px 3px rgba(55, 84, 170, 0.15),
+    inset 0px 0px 4px rgba(255, 255, 255, 0),
+    inset 7px 7px 15px rgba(55, 84, 170, 0.15),
+    inset -7px -7px 20px rgba(255, 255, 255, 1),
+    0px 0px 4px rgba(255, 255, 255, 0.2) !important;
+  padding: 5px 15px;
+  outline: none !important;
+  color: #535d74;
+}
+
+.wang_editor{
+  height: 300px !important;
+}
+
+
+
+.comment_btn_issues{
+  /* position: absolute;
+  bottom: 10px;
+  right: 10px; */
+  font-size: 14px;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 40px;
+  color: #ffffff;
+  background-color: #2bbe7a;
+  box-shadow: 7px 7px 15px rgba(55, 84, 170, 0.15),
+    -7px -7px 20px rgba(255, 255, 255, 1),
+    inset 0px 0px 4px rgba(255, 255, 255, 0.2),
+    inset 7px 7px 15px rgba(55, 84, 170, 0),
+    inset -7px -7px 20px rgba(255, 255, 255, 0),
+    0px 0px 4px rgba(255, 255, 255, 0) !important;
+  transition: box-shadow 0.25s ease !important;
+  cursor: pointer;
+  outline: none;
+}
 
 
 
 
+.check{
+  height: 500px;
+  width: 200px;
+  position: fixed;
+  top: 120px;
+  right: 200px;
+  background: #ecf0f3;
+  border-radius: 20px;
+  /* background-color: #f8fbff; */
+  box-shadow: 18px 18px 30px #d1d9e6, -18px -18px 30px #fff;
+  padding: 30px 30px;
+}
+.check_center{
+  width: 140px;
+  height: 440px;
+  /* background-color: aquamarine; */
+
+}
 
 
+.check_container{
+  width: 140px;
+  height: 50px;
+}
+.check_categorys_btn{
+  border: none;
+  padding: 5px 15px;
+  border-radius: 40px;
+  color: #6d7587;
+  cursor: pointer;
+  font-size: 10px;
+  /* margin-top: 10px; */
+  margin-left: 10px;
+}
 
 
+.queding{
+  height: 50px;
+  width: 100px;
+  position: fixed;
+  top: 650px;
+  right: 250px;
+  background: #e9ecee;
+  border-radius: 20px;
+  /* background-color: #f8fbff; */
+  box-shadow: 18px 18px 30px #d1d9e6, -18px -18px 30px #fff;
+  padding: 30px 30px;
+  line-height: 2px;
+  text-align: center;
+  cursor: pointer;
+}
 
+
+.flag{
+  position: relative;
+}
+.input{
+  height: 15px;
+  width: 15px;
+  position: absolute;
+  top: 20px;
+  border-radius: 50%;
+}
+
+
+.tags_categorys_btn_delete{
+  position: absolute; 
+  right: 30px;
+  top: 13px;
+  border: none;
+  padding: 5px 15px;
+  border-radius: 40px;
+  color: #6d7587;
+  background-color: var(--back-color);
+  box-shadow: 7px 7px 15px rgba(55, 84, 170, 0.15),
+    -7px -7px 20px rgba(255, 255, 255, 1),
+    inset 0px 0px 4px rgba(255, 255, 255, 0.2),
+    inset 7px 7px 15px rgba(55, 84, 170, 0),
+    inset -7px -7px 20px rgba(255, 255, 255, 0),
+    0px 0px 4px rgba(255, 255, 255, 0) !important;
+  transition: box-shadow 0.25s ease !important;
+  cursor: pointer;
+  font-size: 10px;
+  /* margin-top: 10px; */
+  margin-left: 10px;
+  outline: none;
+}
+
+#div1{
+  z-index: 9 !important;
+}
 
 
 

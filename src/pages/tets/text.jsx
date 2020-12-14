@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import E from "wangeditor";
 import "../../global.css";
-import { markdown, getcommit } from "../../api/index";
+import { markdown, getcommit ,sendcomment} from "../../api/index";
 
 class Text extends Component {
   constructor(props) {
@@ -29,38 +29,6 @@ class Text extends Component {
     const elemMenu = this.refs.editorElemMenu;
     const elemBody = this.refs.editorElemBody;
     const editor = new E(elemMenu,elemBody)
-    // 使用 onchange 函数监听内容的变化，并实时更新到 state 中
-    // editor.customConfig.onchange = html => {
-    //     console.log(editor.txt.html())
-    //     this.setState({
-    //         // editorContent: editor.txt.text()
-    //         editorContent: editor.txt.html()
-    //     })
-    // }
-    // editor.customConfig.menus = [
-    //     'head',  // 标题
-    //     'bold',  // 粗体
-    //     'fontSize',  // 字号
-    //     'fontName',  // 字体
-    //     'italic',  // 斜体
-    //     'underline',  // 下划线
-    //     'strikeThrough',  // 删除线
-    //     'foreColor',  // 文字颜色
-    //     'backColor',  // 背景颜色
-    //     'link',  // 插入链接
-    //     'list',  // 列表
-    //     'justify',  // 对齐方式
-    //     'quote',  // 引用
-    //     'emoticon',  // 表情
-    //     'image',  // 插入图片
-    //     'table',  // 表格
-    //     'video',  // 插入视频
-    //     'code',  // 插入代码
-    //     'undo',  // 撤销
-    //     'redo'  // 重复
-    // ]
-    // editor.customConfig.uploadImgShowBase64 = true;
-    // editor.customConfig.uploadImgHeight = 'auto';
     editor.create()
 
 
@@ -74,7 +42,14 @@ class Text extends Component {
       markdown_text: marktext,
     });
   }
-
+  async handleClick(number){
+    let a =document.getElementsByClassName("w-e-text")[0]
+    // console.log(a.innerHTML)
+    // console.log(number)
+    let aa = await sendcomment(number,a.innerHTML)
+    console.log(aa)
+    a.innerHTML = ""
+  }
   render() {
     const { article, markdown_text, commemtInfo } = this.state;
     return (
@@ -112,8 +87,8 @@ class Text extends Component {
                       <span> {item.created_at}</span>
                     </div>
                     {/* 用户评论内容 */}
-                    <div className="comment_text">
-                      <p className="commemt_text_p">{item.body}</p>
+                    <div className="comment_text"dangerouslySetInnerHTML={{ __html: item.body || "" }}>
+                      {/* <p className="commemt_text_p"    dangerouslySetInnerHTML={{ __html: item.body || "" }}>{item.body}</p> */}
                     </div>
                   </div>
                 </div>
@@ -152,12 +127,12 @@ class Text extends Component {
                         borderTop: "none",
                         zIndex: 20,
                       }}
+                    
                       ref="editorElemBody"
                     >
-                      {/* 初始化富文本 (可直接为空什么也不写)*/}              
-                        <div></div>
+                      
                     </div>
-                      <button type="button" className="comment_btn ">comment</button>
+                      <button type="button" className="comment_btn "  onClick={()=>{this.handleClick(article.number)}}>comment</button>
                     
                   </div>
 

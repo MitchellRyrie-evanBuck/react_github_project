@@ -5,8 +5,8 @@
  */
 import axios from 'axios'
 axios.defaults.headers = {
-  Authorization: 'ed2a005a80557968760480a3ca6a833bac29dd28',
-  Accept: "applicationnd.github.v3+json"
+  Authorization: 'token 0bf31b5822db541a9d812119a80513c815c1c038',
+  Accept: "application/vnd.github.v3+json"
 }
 export default function ajax (url, data = {}, method = 'GET') {
 
@@ -17,6 +17,12 @@ export default function ajax (url, data = {}, method = 'GET') {
       promise = axios.get(url, {
         params: data
       })
+    }else if(method === 'DELETE'){
+      promise = axios.delete(url,data)
+    } else if(method === 'PUT'){
+      promise = axios.put(url, data)
+    } else if(method === 'PATCH'){
+      promise = axios.patch(url,data)
     } else {
       promise = axios.post(url, data)
     }

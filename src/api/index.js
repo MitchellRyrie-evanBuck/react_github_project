@@ -22,3 +22,30 @@ export const getTags = (text) => ajax( `https://api.github.com/repos/xiaowen6662
 
 // 获取评论
 export const getcommit = (number) => ajax( `https://api.github.com/repos/xiaowen66621/testBlog/issues/${number}/comments`,"get")
+
+
+// 创建问题
+export const createissues = ({title,body}) => ajax( `https://api.github.com/repos/xiaowen66621/testBlog/issues`,{
+  title,
+  body,
+},"POST")
+
+// 解锁问题
+export const deleteissues = (number) => ajax( `https://api.github.com/repos/xiaowen66621/testBlog/issues/${number}/lock`,{
+  // lock_reason: 'lock_reason'
+},"PUT")
+
+// 修改问题
+export const updataissues = ({number,title,body}) => ajax( `https://api.github.com/repos/xiaowen66621/testBlog/issues/${number}`,{
+  title,
+  body
+},"PATCH")
+
+
+// 发表评论
+export const sendcomment = (number,body) => ajax( `https://api.github.com/repos/xiaowen66621/testBlog/issues/${number}/comments`,{
+  body
+},"POST")
+
+// 修改lables
+export const addIssueLabels = (number,labels) => ajax(`https://api.github.com/repos/xiaowen66621/testBlog/issues/${number}`,labels,'POST')

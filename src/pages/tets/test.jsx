@@ -18,23 +18,18 @@ class Test extends Component {
         <div>
           <Link
             style={{ textDecoration:'none',color : "black"}}
-
             to={{
               pathname: `/content/${categorys.categorys.number}`,
-              params:{foo: 'foo', boo:'boo'}, 
-              state: categorys.categorys
-              
+              // params:{foo: 'foo', boo:'boo'}, 
+              state: categorys.categorys 
             }}
           >
             {categorys.categorys.title}
-          
             {
               categorys.categorys.labels.map((item,index)=>{
               return <button style={{backgroundColor:"#"+item.color}} className="tags_categorys_btn" key={item.id}>{item.name}</button>
               })
             }
-    
-        
           </Link>
         </div>
       </div>
